@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Indirect Recusrsion</title>
+    <script>
+
+        let money = 100;
+        let totalApple = 0;
+
+        function buyApple(x) {
+            if (x > 0) {
+                console.warn("I have ", x, " Rs ", totalApple, " apples")
+                buyMore(x);
+            }
+            else {
+                console.warn("I dont have more money to buy apples", totalApple);
+            }
+        }
+
+        function buyMore(x) {
+            totalApple++;
+            buyApple(x - 10);
+        }
+
+        buyApple(money);
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
