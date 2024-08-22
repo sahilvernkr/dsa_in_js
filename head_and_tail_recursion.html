@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Head and tail Recursion</title>
+    <script>
+        function test(x) {
+            console.warn(x); //head recursion
+            if (x > 0) {
+                test(x - 1);
+            }
+            console.warn(x); //tail recursion
+        }
+        test(5);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
