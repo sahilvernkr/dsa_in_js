@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Reverse String with stack</title>
+    <script>
+        let data = [];
+        let currentSize = data.length;
+
+        function push(newValue) {
+            data[currentSize] = newValue;
+            currentSize++;
+        }
+
+        function pop() {
+            currentSize -= 1
+            lastRemoved = data[currentSize];
+            data.length = currentSize;
+            return lastRemoved;
+        }
+
+        function reverseStr(item) {
+            for (i = 0; i < item.length; i++) {
+                push(item[i]);
+            }
+            for (i = 0; i < item.length; i++) {
+                item[i] = pop();
+            }
+        }
+
+        let str = 'sahil';
+        console.warn(str);
+        str = str.split("");
+        console.warn(str);
+        reverseStr(str);
+        console.warn(str);
+        console.warn(str.join(""));
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
