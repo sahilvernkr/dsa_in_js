@@ -1,55 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Stack with class</title>
     <script>
-       
-       class Stack
-       {
-        item=[];
-        currentSize;
-        maxSize;
 
-        constructor(size){
-            this.maxSize = size;
-            this.currentSize = this.item.length;
-        }
-        push(newValue){
-            if (this.currentSize >= this.maxSize) {
-                alert("Stack is full, you cannot add " + newValue)
+        class Stack {
+            item = [];
+            currentSize;
+            maxSize;
+
+            constructor(size) {
+                this.maxSize = size;
+                this.currentSize = this.item.length;
             }
-            else {
-                this.item[this.currentSize] = newValue;
-                this.currentSize++;
+            push(newValue) {
+                if (this.currentSize >= this.maxSize) {
+                    alert("Stack is full, you cannot add " + newValue)
+                }
+                else {
+                    this.item[this.currentSize] = newValue;
+                    this.currentSize++;
+                }
             }
-        }
-        pop(){
-            if (this.currentSize > 0) {
-                this.currentSize -= 1
-                this.item.length = this.currentSize;
+            pop() {
+                if (this.currentSize > 0) {
+                    this.currentSize -= 1
+                    this.item.length = this.currentSize;
+                }
+                else {
+                    alert("stack is empty");
+                }
             }
-            else {
-                alert("stack is empty");
+            display() {
+                console.warn(this.item);
             }
-        }
-        display(){
-            console.warn(this.item);
+
         }
 
-       }
+        st1 = new Stack(5);
+        st1.push(20);
+        st1.push(30);
+        st1.push(40);
+        st1.push(50);
+        st1.push(60)
+        st1.push(70)
+        st1.pop();
+        st1.display();
 
-       st1 = new Stack(5);
-       st1.push(20);
-       st1.push(30);
-       st1.push(40);
-       st1.push(50);
-       st1.push(60)
-       st1.push(70)
-       st1.pop();
-       st1.display();
-      
     </script>
 </head>
+
 <body>
 </body>
+
 </html>
