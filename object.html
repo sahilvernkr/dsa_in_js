@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+    <script>
+        let data = {
+            name: 'sahil',
+            age: 28,
+            mail: 'test@abc.com',
+            getName: function () {
+                return this.name;
+            }
+        }
+
+        data.contact = '9923xx34xx';
+        console.warn(data);
+
+        console.warn(data.getName());
+
+        //loop through object
+        for (x in data) {
+            console.warn(x);
+            console.warn(data[x]);
+        }
+
+        //to get the keys
+        console.warn(Object.keys(data));
+
+        //to get values
+        console.warn(Object.values(data));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
