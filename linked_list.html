@@ -25,14 +25,26 @@
                 this.tail = newNode;
                 this.size++;
             }
-        }
 
+            traversing() {
+                let counter = 0;
+                let currentNode = this.head;
+                while (counter < this.size) {
+                    console.warn(currentNode);
+                    currentNode = currentNode.next;
+                    counter++;
+                }
+            }
+        }
 
         let list = new List(200);
         list.appendNode(300);
         list.appendNode(400);
         list.appendNode(500);
-        console.warn(list); // https://www.youtube.com/watch?v=FKgzFvGg1Hk
+        list.appendNode(600);
+        list.appendNode(700);
+        //   console.warn(list); // https://www.youtube.com/watch?v=FKgzFvGg1Hk
+        list.traversing();
     </script>
 </head>
 
