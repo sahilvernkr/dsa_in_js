@@ -57,17 +57,29 @@
                 let currentNode = this.head;
                 while (counter > index) {
                     counter++;
-                    currentNode = currentNode.next ;
+                    currentNode = currentNode.next;
                 }
                 let nextNode = currentNode.next;
                 currentNode.next = {
                     value: value,
-                    next:nextNode
+                    next: nextNode
                 }
             }
 
-            searchNode(data){
+            searchNode(data) {
                 let result = undefined;
+                let lead = this.head;
+                let loop = true;
+                while (loop) {
+                    lead = lead.next;
+
+                    loop = !!lead;//converts to boolean
+                    if (loop && lead.value === data) {
+                        loop = false;
+                        result = lead;
+                    }
+                }
+                console.warn(result);
             }
         }
 
@@ -78,11 +90,11 @@
         list.appendNode(600);
         list.appendNode(700);
         //   console.warn(list); // https://www.youtube.com/watch?v=FKgzFvGg1Hk
+        //  list.traversing();
+        list.deleteNode(4);
         list.traversing();
-        //  list.deleteNode(4);
-        // list.traversing();
         list.insertNode(2, 4000)
-        list.searchNode(500);
+        list.searchNode(300);
     </script>
 </head>
 
