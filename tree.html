@@ -24,16 +24,43 @@
                 return this.root === null;
             }
 
-          makeTree(val){
-            let newnode = new Node(val);
-            if(this.root === null){
-                this.root = newnode;
+            makeTree(val) {
+                let newnode = new Node(val);
+                if (this.root === null) {
+                    this.root = newnode;
+                }
+                else {
+                    this.insertNode(this.root, newnode);
+                }
             }
-          }  
+
+            insertNode(root, newnode) {
+                if (root.value > newnode.value) {
+                    if (root.left === null) {
+                        root.left = newnode;
+                    }
+                    else {
+                        this.insertNode(root.left, newnode);
+                    }
+                }
+                else {
+                    if (root.right === null) {
+                        root.right = newnode;
+                    }
+                    else {
+                        this.insertNode(root.right, newnode);
+                    }
+                }
+            }
         }
 
         let bst = new BSTree();
         bst.makeTree(20);
+        bst.makeTree(10);
+        bst.makeTree(5);
+        bst.makeTree(7);
+        bst.makeTree(30);
+        bst.makeTree(40);
         console.warn(bst.isTreeEmpty());
         console.warn(bst);
     </script>
