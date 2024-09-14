@@ -91,6 +91,24 @@
                     console.warn(root.value);
                 }
             }
+
+            bfsTraversersing(){
+                let queue = [];
+                queue.push(this.root);
+                while(queue.length)
+            {
+                let current = queue.shift();
+                if(current.left){
+                    queue.push(current.left);
+                }
+
+                if(current.right){
+                    queue.push(current.right);
+                }
+                console.warn(current.value);
+            }
+
+            }
         }
 
         let bst = new BSTree();
@@ -101,9 +119,10 @@
         bst.makeTree(30);
         bst.makeTree(40);
         bst.makeTree(23);
+        bst.bfsTraversersing();
         //  bst.preOrder(bst.root);
         //  bst.inOrder(bst.root);
-        bst.postOrder(bst.root);
+        // bst.postOrder(bst.root);
         // console.warn(bst.search(bst.root, 30));
         //  console.warn(bst.isTreeEmpty());
         //  console.warn(bst);
