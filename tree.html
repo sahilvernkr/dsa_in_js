@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binary Search tree</title>
     <script>
-
+        // Documetation : https://docs.google.com/document/d/1pN6NWD63ZqI2mH4B1yxIzdxDkR9rk-M6L9PNOBkfT0E/edit
         class Node {
             constructor(val) {
                 this.value = val;
@@ -67,18 +67,46 @@
                     return this.search(root.right, val)
                 }
             }
+
+            preOrder(root) {
+                if (root) {
+                    console.warn(root.value);
+                    this.preOrder(root.left);
+                    this.preOrder(root.right);
+                }
+            }
+
+            inOrder(root) {
+                if (root) {
+                    this.inOrder(root.left);
+                    console.warn(root.value);
+                    this.inOrder(root.right);
+                }
+            }
+
+            postOrder(root) {
+                if (root) {
+                    this.postOrder(root.left);
+                    this.postOrder(root.right);
+                    console.warn(root.value);
+                }
+            }
         }
 
         let bst = new BSTree();
         bst.makeTree(20);
         bst.makeTree(10);
         bst.makeTree(5);
-        bst.makeTree(7);
+        bst.makeTree(11);
         bst.makeTree(30);
         bst.makeTree(40);
-        console.warn(bst.search(bst.root, 30));
-        console.warn(bst.isTreeEmpty());
-        console.warn(bst);
+        bst.makeTree(23);
+        //  bst.preOrder(bst.root);
+        //  bst.inOrder(bst.root);
+        bst.postOrder(bst.root);
+        // console.warn(bst.search(bst.root, 30));
+        //  console.warn(bst.isTreeEmpty());
+        //  console.warn(bst);
     </script>
 </head>
 
